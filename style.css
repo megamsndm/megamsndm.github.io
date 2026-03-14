@@ -1,4 +1,4 @@
-/* style.css */
+/* Modern Academic Website CSS */
 * {
     margin: 0;
     padding: 0;
@@ -8,215 +8,301 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    color: #333;
-    background: #f4f4f4;
+    color: #2c3e50;
+    background: #f5f7fa;
     padding: 20px;
 }
 
 .container {
-    max-width: 1000px;
+    max-width: 1200px;
     margin: 0 auto;
     background: white;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    overflow: hidden;
 }
 
+/* Header */
 header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 40px 30px;
     text-align: center;
-    margin-bottom: 30px;
-    border-bottom: 2px solid #1e4b8f;
-    padding-bottom: 20px;
 }
 
 h1 {
-    font-size: 2.5em;
-    color: #1e4b8f;
-    margin-bottom: 5px;
+    font-size: 2.8em;
+    margin-bottom: 10px;
+    font-weight: 600;
 }
 
 .title {
-    font-size: 1.2em;
-    color: #666;
-    margin-bottom: 15px;
+    font-size: 1.3em;
+    opacity: 0.95;
+    margin-bottom: 25px;
 }
 
-.contact {
+/* Email Button */
+.email-button {
+    display: inline-block;
+    background: #e74c3c;
+    color: white;
+    padding: 12px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 20px 0;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 15px rgba(231, 76, 60, 0.4);
+}
+
+.email-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(231, 76, 60, 0.6);
+}
+
+.email-button i {
+    margin-right: 10px;
+}
+
+/* Social Icons */
+.social-icons {
+    margin-top: 20px;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 2em;
+    margin: 0 15px;
+    transition: transform 0.2s;
+    display: inline-block;
+}
+
+.social-icons a:hover {
+    transform: scale(1.2);
+}
+
+/* Tabs */
+.tabs {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-    font-size: 0.9em;
-    color: #555;
+    background: #f8f9fa;
+    border-bottom: 2px solid #e9ecef;
+    padding: 0 20px;
 }
 
-.contact i {
-    margin-right: 5px;
-    color: #1e4b8f;
+.tab-button {
+    background: none;
+    border: none;
+    padding: 15px 20px;
+    font-size: 1em;
+    font-weight: 600;
+    color: #6c757d;
+    cursor: pointer;
+    transition: all 0.3s;
+    border-bottom: 3px solid transparent;
 }
 
-.contact a {
-    color: #1e4b8f;
-    text-decoration: none;
+.tab-button:hover {
+    color: #667eea;
 }
 
-.contact a:hover {
-    text-decoration: underline;
+.tab-button.active {
+    color: #667eea;
+    border-bottom-color: #667eea;
 }
 
-section {
-    margin-bottom: 30px;
+/* Tab Content */
+.tab-content {
+    display: none;
+    padding: 30px;
+    animation: fadeIn 0.5s;
 }
 
+.tab-content.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Section Headers */
 h2 {
-    font-size: 1.5em;
-    color: #1e4b8f;
-    border-bottom: 2px solid #1e4b8f;
-    padding-bottom: 5px;
-    margin-bottom: 20px;
+    color: #2c3e50;
+    font-size: 2em;
+    margin-bottom: 25px;
+    border-bottom: 3px solid #667eea;
+    padding-bottom: 10px;
+    display: inline-block;
 }
 
 h3 {
+    color: #34495e;
+    margin: 20px 0 10px;
+    font-size: 1.3em;
+}
+
+/* Entry styling */
+.entry-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 5px;
+}
+
+.entry-title {
     font-size: 1.2em;
-    color: #333;
-    margin: 15px 0 10px;
+    color: #2c3e50;
 }
 
-/* Employment / Teaching / Education entries */
-.job, .teaching-entry, .edu-entry {
-    margin-bottom: 20px;
-}
-
-.job-header, .teaching-header {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    margin-bottom: 5px;
-}
-
-.job-title, .teaching-title {
+.entry-date {
+    color: #e74c3c;
     font-weight: bold;
-    color: #1e4b8f;
-}
-
-.job-date, .teaching-date, .edu-date, .conf-date {
-    color: #b35c1f;
-    font-weight: bold;
-}
-
-.edu-entry {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-
-/* Skills */
-.skill-category {
-    margin-bottom: 15px;
-}
-
-.skill-category h3 {
-    margin-bottom: 5px;
-    color: #1e4b8f;
-    font-size: 1.1em;
-}
-
-.skill-category ul {
-    list-style-type: disc;
-    margin-left: 20px;
-}
-
-/* Courses */
-.course-group {
-    margin-bottom: 20px;
-}
-
-.course-group h3 {
-    margin-bottom: 5px;
-    color: #1e4b8f;
-}
-
-.course-group ul {
-    list-style-type: disc;
-    margin-left: 20px;
-}
-
-/* Conferences */
-.conf-list {
-    list-style-type: none;
-}
-
-.conf-list li {
-    margin-bottom: 15px;
-    padding-left: 0;
-}
-
-.conf-list strong {
-    color: #1e4b8f;
-}
-
-/* Book translations, references */
-.refs {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-    justify-content: space-between;
-}
-
-.ref {
-    flex: 1 1 250px;
-    background: #f9f9f9;
-    padding: 15px;
-    border-radius: 5px;
-    border-left: 4px solid #1e4b8f;
-}
-
-.ref strong {
-    color: #1e4b8f;
-}
-
-/* Publications */
-.pub-list {
-    list-style-type: decimal;
-    margin-left: 20px;
-}
-
-.pub-list li {
-    margin-bottom: 15px;
-}
-
-.pub-list a {
-    color: #1e4b8f;
-    text-decoration: none;
-}
-
-.pub-list a:hover {
-    text-decoration: underline;
-}
-
-footer {
-    text-align: center;
-    margin-top: 30px;
-    padding-top: 20px;
-    border-top: 1px solid #ddd;
-    color: #777;
+    background: #fde9e7;
+    padding: 3px 10px;
+    border-radius: 20px;
     font-size: 0.9em;
 }
 
-/* Responsive */
-@media (max-width: 600px) {
-    .container {
-        padding: 15px;
+.education-entry, .experience-entry, .teaching-entry, .project-entry, .book-entry {
+    margin-bottom: 30px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border-left: 4px solid #667eea;
+}
+
+/* Publications */
+.publications-list {
+    list-style-position: inside;
+    padding-left: 0;
+}
+
+.publications-list li {
+    margin-bottom: 20px;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border-left: 4px solid #e74c3c;
+}
+
+.publications-list a {
+    color: #667eea;
+    text-decoration: none;
+}
+
+.publications-list a:hover {
+    text-decoration: underline;
+}
+
+/* Skills */
+.skills-category {
+    margin-bottom: 25px;
+    background: #f8f9fa;
+    padding: 15px 20px;
+    border-radius: 8px;
+}
+
+.skills-category h3 {
+    color: #667eea;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.skills-category ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    gap: 10px;
+}
+
+.skills-category li {
+    background: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    border: 1px solid #e9ecef;
+    color: #495057;
+}
+
+/* Courses */
+.courses-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.courses-list li {
+    background: #e3f2fd;
+    padding: 5px 15px;
+    border-radius: 20px;
+    color: #1976d2;
+}
+
+.courses-list a {
+    color: #1976d2;
+    text-decoration: none;
+}
+
+.courses-list a:hover {
+    text-decoration: underline;
+}
+
+/* Project links */
+.project-entry a {
+    color: #667eea;
+    text-decoration: none;
+}
+
+.project-entry a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #f8f9fa;
+    color: #6c757d;
+    border-top: 1px solid #e9ecef;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2em;
     }
-    .contact {
-        flex-direction: column;
-        align-items: center;
-        gap: 5px;
-    }
-    .job-header, .teaching-header, .edu-entry {
+    
+    .tabs {
         flex-direction: column;
     }
-    .refs {
+    
+    .tab-button {
+        width: 100%;
+        text-align: left;
+    }
+    
+    .entry-header {
         flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .entry-date {
+        margin-top: 5px;
+    }
+    
+    .social-icons a {
+        font-size: 1.5em;
+        margin: 0 8px;
+    }
+    
+    .email-button {
+        font-size: 1em;
+        padding: 10px 20px;
     }
 }
